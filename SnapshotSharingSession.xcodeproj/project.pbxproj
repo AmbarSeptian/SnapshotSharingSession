@@ -12,9 +12,8 @@
 		E5EFCA1123FD834B00F9ADE6 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EFCA1023FD834B00F9ADE6 /* CustomTableViewController.swift */; };
 		E5EFCA1623FD834F00F9ADE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5EFCA1523FD834F00F9ADE6 /* Assets.xcassets */; };
 		E5EFCA1923FD834F00F9ADE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EFCA1723FD834F00F9ADE6 /* LaunchScreen.storyboard */; };
-		E5EFCA2423FD834F00F9ADE6 /* CustomTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EFCA2323FD834F00F9ADE6 /* CustomTableViewControllerTests.swift */; };
+		E5EFCA2423FD834F00F9ADE6 /* phase1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EFCA2323FD834F00F9ADE6 /* phase1.swift */; };
 		E5EFCA2F23FD90C500F9ADE6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EFCA2E23FD90C500F9ADE6 /* Helpers.swift */; };
-		E5EFCA3123FD91A400F9ADE6 /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EFCA3023FD91A400F9ADE6 /* SnapshotTestCase.swift */; };
 		E5EFCA3523FD942D00F9ADE6 /* phase2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EFCA3423FD942D00F9ADE6 /* phase2.swift */; };
 		E5EFCA3723FD97C800F9ADE6 /* phase3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EFCA3623FD97C800F9ADE6 /* phase3.swift */; };
 		E5EFCA3923FDA16E00F9ADE6 /* phase4.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EFCA3823FDA16E00F9ADE6 /* phase4.swift */; };
@@ -39,10 +38,9 @@
 		E5EFCA1823FD834F00F9ADE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5EFCA1A23FD834F00F9ADE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5EFCA1F23FD834F00F9ADE6 /* SnapshotSharingSessionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapshotSharingSessionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5EFCA2323FD834F00F9ADE6 /* CustomTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewControllerTests.swift; sourceTree = "<group>"; };
+		E5EFCA2323FD834F00F9ADE6 /* phase1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phase1.swift; sourceTree = "<group>"; };
 		E5EFCA2523FD834F00F9ADE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5EFCA2E23FD90C500F9ADE6 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		E5EFCA3023FD91A400F9ADE6 /* SnapshotTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTestCase.swift; sourceTree = "<group>"; };
 		E5EFCA3423FD942D00F9ADE6 /* phase2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phase2.swift; sourceTree = "<group>"; };
 		E5EFCA3623FD97C800F9ADE6 /* phase3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phase3.swift; sourceTree = "<group>"; };
 		E5EFCA3823FDA16E00F9ADE6 /* phase4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phase4.swift; sourceTree = "<group>"; };
@@ -100,11 +98,10 @@
 		E5EFCA2223FD834F00F9ADE6 /* SnapshotSharingSessionTests */ = {
 			isa = PBXGroup;
 			children = (
-				E5EFCA2323FD834F00F9ADE6 /* CustomTableViewControllerTests.swift */,
+				E5EFCA2323FD834F00F9ADE6 /* phase1.swift */,
 				E5EFCA3423FD942D00F9ADE6 /* phase2.swift */,
 				E5EFCA3623FD97C800F9ADE6 /* phase3.swift */,
 				E5EFCA3823FDA16E00F9ADE6 /* phase4.swift */,
-				E5EFCA3023FD91A400F9ADE6 /* SnapshotTestCase.swift */,
 				E5EFCA2E23FD90C500F9ADE6 /* Helpers.swift */,
 				E5EFCA2523FD834F00F9ADE6 /* Info.plist */,
 			);
@@ -221,10 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5EFCA2423FD834F00F9ADE6 /* CustomTableViewControllerTests.swift in Sources */,
+				E5EFCA2423FD834F00F9ADE6 /* phase1.swift in Sources */,
 				E5EFCA2F23FD90C500F9ADE6 /* Helpers.swift in Sources */,
 				E5EFCA3523FD942D00F9ADE6 /* phase2.swift in Sources */,
-				E5EFCA3123FD91A400F9ADE6 /* SnapshotTestCase.swift in Sources */,
 				E5EFCA3923FDA16E00F9ADE6 /* phase4.swift in Sources */,
 				E5EFCA3723FD97C800F9ADE6 /* phase3.swift in Sources */,
 			);

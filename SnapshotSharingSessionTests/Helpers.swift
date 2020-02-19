@@ -8,6 +8,8 @@
 
 import UIKit
 
+var record: Bool = false
+
 func snapshotUrl(file: StaticString, function: String) -> URL {
   return snapshotDirectoryUrl(file: file)
     .appendingPathComponent(String(function.dropLast(2)))
