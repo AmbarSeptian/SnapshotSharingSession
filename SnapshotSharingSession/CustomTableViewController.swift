@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CustomTableViewController.swift
 //  SnapshotSharingSession
 //
 //  Created by Ambar Septian on 19/02/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UIViewController {
+class CustomTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
