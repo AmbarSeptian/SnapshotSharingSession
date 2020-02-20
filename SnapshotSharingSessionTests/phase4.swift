@@ -12,7 +12,9 @@ import XCTest
 class CustomTableViewControllerTests4: XCTestCase {
     
     func testCustomTableViewControllerView() {
-//        let viewController = CustomTableViewController()
+        let viewController = CustomTableViewController()
+        assertSnapshot(matching: viewController.view, as: .image)
+        assertSnapshot(matching: viewController.view, as: .recursiveDescription)
     }
     
     
@@ -75,6 +77,14 @@ struct Snapshotting<Value, Format> {
     let snapshot: (Value) -> Format
     
     // add pullback here later
+    func pullback<NewValue>(_ f:@escaping(NewValue) -> Value) -> Snapshotting<NewValue, Format> {
+        
+        return Snapshotting<NewValue, Format>(
+            diffing: self.diffing,
+            pathExtension: self.pathExtension,
+            snapshot: { a0 in self.snapshot(f(a0)) }
+        )
+    }
 }
 
 
@@ -100,53 +110,53 @@ extension Snapshotting where Value == UIImage, Format == UIImage {
                                     snapshot: { $0 })
 }
 
-
-extension Snapshotting where Value == CALayer, Format == UIImage {
-  static let image = Snapshotting(
-    diffing: .image,
-    pathExtension: "png",
-    snapshot: { layer in
-      return UIGraphicsImageRenderer(size: layer.bounds.size)
-        .image { ctx in layer.render(in: ctx.cgContext) }
-  }
-  )
-}
-
-extension Snapshotting where Value == UIView, Format == UIImage {
-    static let image: Snapshotting = Snapshotting(
-    diffing: .image,
-    pathExtension: "png",
-    snapshot: { view in Snapshotting<CALayer, UIImage>.image.snapshot(view.layer) }
-  )
-}
-
-extension Snapshotting where Value == UIViewController, Format == UIImage {
-    static let image:Snapshotting = Snapshotting(
-    diffing: .image,
-    pathExtension: "png",
-    snapshot: { vc in Snapshotting<UIView, UIImage>.image.snapshot(vc.view) }
-  )
-}
-
-
+//
 //extension Snapshotting where Value == CALayer, Format == UIImage {
-//    static let image: Snapshotting = Snapshotting<UIImage, UIImage>.image.pullback { layer -> UIImage in
-//        return UIGraphicsImageRenderer(size: layer.bounds.size)
-//            .image { ctx in layer.render(in: ctx.cgContext) }
-//    }
+//  static let image = Snapshotting(
+//    diffing: .image,
+//    pathExtension: "png",
+//    snapshot: { layer in
+//      return UIGraphicsImageRenderer(size: layer.bounds.size)
+//        .image { ctx in layer.render(in: ctx.cgContext) }
+//  }
+//  )
 //}
 //
 //extension Snapshotting where Value == UIView, Format == UIImage {
-//    static let image:Snapshotting<UIView, UIImage> = Snapshotting<CALayer, UIImage>.image.pullback { view in
-//        return view.layer
-//    }
+//    static let image: Snapshotting = Snapshotting(
+//    diffing: .image,
+//    pathExtension: "png",
+//    snapshot: { view in Snapshotting<CALayer, UIImage>.image.snapshot(view.layer) }
+//  )
 //}
 //
 //extension Snapshotting where Value == UIViewController, Format == UIImage {
-//    static let image:Snapshotting<UIViewController, UIImage> = Snapshotting<UIView, UIImage>.image.pullback { vc in
-//        return vc.view
-//    }
+//    static let image:Snapshotting = Snapshotting(
+//    diffing: .image,
+//    pathExtension: "png",
+//    snapshot: { vc in Snapshotting<UIView, UIImage>.image.snapshot(vc.view) }
+//  )
 //}
+
+
+extension Snapshotting where Value == CALayer, Format == UIImage {
+    static let image: Snapshotting = Snapshotting<UIImage, UIImage>.image.pullback { layer -> UIImage in
+        return UIGraphicsImageRenderer(size: layer.bounds.size)
+            .image { ctx in layer.render(in: ctx.cgContext) }
+    }
+}
+
+extension Snapshotting where Value == UIView, Format == UIImage {
+    static let image:Snapshotting<UIView, UIImage> = Snapshotting<CALayer, UIImage>.image.pullback { view in
+        return view.layer
+    }
+}
+
+extension Snapshotting where Value == UIViewController, Format == UIImage {
+    static let image:Snapshotting<UIViewController, UIImage> = Snapshotting<UIView, UIImage>.image.pullback { vc in
+        return vc.view
+    }
+}
 
 
 
@@ -181,8 +191,8 @@ extension Snapshotting where Value == UIView, Format == String {
 }
 
 
-//extension Snapshotting where Value == UIViewController, Format == String {
-//    static let recursiveDescription: Snapshotting<UIViewController,String> = Snapshotting<UIView, String>.recursiveDescription.pullback { vc -> UIView in
-//        return vc.view
-//    }
-//}
+extension Snapshotting where Value == UIViewController, Format == String {
+    static let recursiveDescription: Snapshotting<UIViewController,String> = Snapshotting<UIView, String>.recursiveDescription.pullback { vc -> UIView in
+        return vc.view
+    }
+}

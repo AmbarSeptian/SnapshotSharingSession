@@ -1,20 +1,20 @@
+////
+////  phase2.swift
+////  SnapshotSharingSessionTests
+////
+////  Created by Ambar Septian on 19/02/20.
+////  Copyright © 2020 Ambar Septian. All rights reserved.
+////
 //
-//  phase2.swift
-//  SnapshotSharingSessionTests
+//import XCTest
+//@testable import SnapshotSharingSession
 //
-//  Created by Ambar Septian on 19/02/20.
-//  Copyright © 2020 Ambar Septian. All rights reserved.
-//
-
-import XCTest
-@testable import SnapshotSharingSession
-
-class CustomTableViewControllerTests2: XCTest {
-    func testCustomTableViewControllerView() {
+//class CustomTableViewControllerTests2: XCTest {
+//    func testCustomTableViewControllerView() {
 //        let viewController = CustomTableViewController()
 //        assertSnapshot(matching: viewController.view)
-    }
-    
+//    }
+//    
 //    func assertSnapshot(
 //      matching value: Snapshottable,
 //      file: StaticString = #file,
@@ -40,9 +40,9 @@ class CustomTableViewControllerTests2: XCTest {
 //        XCTFail("Recorded: …\n\"\(referenceUrl.path)\"", file: file, line: line)
 //      }
 //    }
-}
-
-
+//}
+//
+//
 //protocol Snapshottable {
 //    var snapshot: UIImage { get }
 //}
@@ -53,15 +53,15 @@ class CustomTableViewControllerTests2: XCTest {
 //    }
 //}
 //
+////
+////extension UIView: Snapshottable {
+////    var snapshot: UIImage {
+////        return UIGraphicsImageRenderer(size: self.bounds.size).image { ctx in layer.render(in: ctx.cgContext) }
+////    }
+////}
+////
 //
-//extension UIView: Snapshottable {
-//    var snapshot: UIImage {
-//        return UIGraphicsImageRenderer(size: self.bounds.size).image { ctx in layer.render(in: ctx.cgContext) }
-//    }
-//}
-
-
-
+//
 //extension CALayer: Snapshottable {
 //    var snapshot: UIImage {
 //        return UIGraphicsImageRenderer(size: bounds.size)
@@ -81,4 +81,4 @@ class CustomTableViewControllerTests2: XCTest {
 //        return view.snapshot
 //    }
 //}
-
+//

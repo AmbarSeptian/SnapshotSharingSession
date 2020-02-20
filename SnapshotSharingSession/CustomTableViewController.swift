@@ -28,7 +28,7 @@ class CustomTableViewController: UIViewController {
 
 class CustomTableView: UITableView {
     let cellColor: UIColor
-    var count = 50
+    var count = 30
 
     init(cellColor: UIColor) {
         self.cellColor = cellColor
